@@ -12,4 +12,4 @@ getwallpapers_env:
 
 .PHONY: getwallpapers_test
 getwallpapers_test:
-	echo "hello"
+	python3 -m unittest tests/*

@@ -12,7 +12,7 @@ def get_default_date():
     if format_month > 1:
         return datetime.now().strftime('%Y'), '0' + str(format_month - 1)
     else:
-        return datetime.now().strftime('%Y'), 12,
+        return datetime.now().strftime('%Y'), '12',
 
 def convert_date(year, month):
     """
@@ -23,9 +23,12 @@ def convert_date(year, month):
     """
     month = int(month)
     if month > 1:
-        return year, '0' + str(month - 1)
+        if month > 9:
+            return year, str(month - 1)
+        else:
+            return year, '0' + str(month - 1)
     else:
-        return int(year) - 1, 12
+        return str(int(year) - 1), '12'
 
 
 def get_month(i):
@@ -48,5 +51,9 @@ def get_month(i):
         11: 'november',
         12: 'december',
     }
-
-    return d[i]
+    if type(i) == int or i.isdigit():
+        if i > 0 and i <= 12:
+            return d[i]
+    else:
+        return None    
+    
