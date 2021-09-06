@@ -44,3 +44,9 @@ docker exec -it ff981f3500f2 /bin/sh
 python3 main.py [дата] [разрешение]
 # Например: python3 main.py 082021 1920x1080
 ```
+
+### Запуск тестов
+
+```
+make getwallpapers_test
+```
