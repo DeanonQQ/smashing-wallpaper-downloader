@@ -8,7 +8,7 @@ def main():
             year, month  = utils.convert_date(sys.argv[1:][0][2:], sys.argv[1:][0][:2])
             res = sys.argv[1:][1]
         else:
-            print("Incorrent format data:", sys.argv[1:], "Example: 082021")
+            print("Incorrect format data:", sys.argv[1:], "Example: 082021")
             exit(0)
     else:
         year, month = utils.get_default_date()
