@@ -14,12 +14,12 @@ def download_image_from_url(url):
 
 def parse_url(r, res):
     """
-    Функция принимает html страницы из requests.get() и желаемое разрешение изображения
+    Функция принимает html страницу из requests.get() и желаемое разрешение изображения
     Фунция отбирает нужные блоки и ищет a-теги для получения ссылок на изображения
     после чего вызывает функцию сохранения изображения.
     """
     soup = bs(r.text, features="html.parser")
-    tables=soup.find('div', {'id': 'article__content'}) #Получаем див с обоями
+    tables = soup.find('div', {'id': 'article__content'}) #Получаем див с обоями
     tables = tables.find_all('ul') 
 
     for a_block in tables:
